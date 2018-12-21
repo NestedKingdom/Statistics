@@ -1,14 +1,14 @@
 import csv
 import math as mh
-import pandas as pd
 
-with open('data.txt') as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=',')
-    cs = list(csv_reader)
+def csvtolist(str):
+    with open(str) as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        cs = list(csv_reader)
+        cs = list(map(int, cs[0]))
+    return cs
 
-cs = list(map(int, cs[0]))
-pdd = pd.read_csv('data.txt')
-
+# tr=csvtolist('data.txt') example of function
 
 def getmean(lst):
     while len(lst) > 5:
@@ -71,5 +71,3 @@ def getmedian(lst):
 
 def getmode(lst):
         return max(lst,key=lst.count)
-lcc = [24, 29, 24]
-print(getmode(cs))
