@@ -1,12 +1,14 @@
 import csv
 import math as mh
 
-def csvtolist(str):
+
+def csvtolist(str, delimiter=','):
     with open(str) as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',')
+        csv_reader = csv.reader(csv_file, delimiter=delimiter)
         cs = list(csv_reader)
         cs = list(map(int, cs[0]))
     return cs
+
 
 # tr=csvtolist('data.txt') example of function
 
@@ -70,4 +72,4 @@ def getmedian(lst):
 
 
 def getmode(lst):
-        return max(lst,key=lst.count)
+    return max(lst, key=lst.count)
